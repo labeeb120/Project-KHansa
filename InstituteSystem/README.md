@@ -17,8 +17,9 @@ This is a simple accounting system for an institute, built using VB.NET and MS A
 
 ## Setup
 1. Clone the repository.
-2. Open the project in Visual Studio or use `dotnet build`.
-3. Run the application.
+2. Open `InstituteSystem.sln` using **Visual Studio 2022**.
+3. Ensure you have the **.NET desktop development** workload installed in Visual Studio.
+4. Press **F5** or click **Start** to run the application.
 4. On the login screen, select a path to an existing or new `.accdb` file.
 5. Log in with:
    - **Username:** `admin`
