@@ -29,47 +29,70 @@ Partial Class FrmPayments
         '
         'Label1
         '
-        Me.Label1.Location = New System.Drawing.Point(20, 20)
-        Me.Label1.Text = "Student Name:"
+        Me.Label1.Location = New System.Drawing.Point(340, 20)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(100, 23)
+        Me.Label1.Text = "اسم الطالبة:"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'txtStudentName
         '
-        Me.txtStudentName.Location = New System.Drawing.Point(120, 20)
+        Me.txtStudentName.Location = New System.Drawing.Point(134, 20)
+        Me.txtStudentName.Name = "txtStudentName"
         Me.txtStudentName.Size = New System.Drawing.Size(200, 23)
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(20, 60)
-        Me.Label2.Text = "Amount:"
+        Me.Label2.Location = New System.Drawing.Point(340, 60)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(100, 23)
+        Me.Label2.Text = "المبلغ:"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'txtAmount
         '
-        Me.txtAmount.Location = New System.Drawing.Point(120, 60)
+        Me.txtAmount.Location = New System.Drawing.Point(234, 60)
+        Me.txtAmount.Name = "txtAmount"
         Me.txtAmount.Size = New System.Drawing.Size(100, 23)
         '
         'Label3
         '
-        Me.Label3.Location = New System.Drawing.Point(20, 100)
-        Me.Label3.Text = "Notes:"
+        Me.Label3.Location = New System.Drawing.Point(340, 100)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(100, 23)
+        Me.Label3.Text = "ملاحظات:"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'txtNotes
         '
-        Me.txtNotes.Location = New System.Drawing.Point(120, 100)
-        Me.txtNotes.Size = New System.Drawing.Size(200, 23)
+        Me.txtNotes.Location = New System.Drawing.Point(20, 100)
+        Me.txtNotes.Name = "txtNotes"
+        Me.txtNotes.Size = New System.Drawing.Size(314, 23)
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(120, 140)
-        Me.btnSave.Size = New System.Drawing.Size(100, 30)
-        Me.btnSave.Text = "Save Payment"
+        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(0, 150, 136)
+        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSave.ForeColor = System.Drawing.Color.White
+        Me.btnSave.Location = New System.Drawing.Point(134, 140)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(200, 35)
+        Me.btnSave.Text = "حفظ الدفعة"
+        Me.btnSave.UseVisualStyleBackColor = False
         '
         'dgvPayments
         '
-        Me.dgvPayments.Location = New System.Drawing.Point(20, 180)
-        Me.dgvPayments.Size = New System.Drawing.Size(440, 200)
+        Me.dgvPayments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvPayments.BackgroundColor = System.Drawing.Color.White
+        Me.dgvPayments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvPayments.Location = New System.Drawing.Point(20, 190)
+        Me.dgvPayments.Name = "dgvPayments"
+        Me.dgvPayments.ReadOnly = True
+        Me.dgvPayments.Size = New System.Drawing.Size(440, 190)
         '
         'FrmPayments
         '
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(480, 400)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtStudentName)
@@ -79,9 +102,13 @@ Partial Class FrmPayments
         Me.Controls.Add(Me.txtNotes)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.dgvPayments)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "FrmPayments"
-        Me.Text = "Manage Student Payments"
-        Me.StartPosition = FormStartPosition.CenterParent
+        Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.RightToLeftLayout = True
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.Text = "إدارة مقبوضات الطالبات"
         CType(Me.dgvPayments, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
