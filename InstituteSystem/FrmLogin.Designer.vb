@@ -20,67 +20,119 @@ Partial Class FrmLogin
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.btnSelectDB = New System.Windows.Forms.Button()
-        Me.lblStatus = New System.Windows.Forms.Label()
         Me.txtDBPath = New System.Windows.Forms.TextBox()
+        Me.lblTitle = New System.Windows.Forms.Label()
+        Me.lblUser = New System.Windows.Forms.Label()
+        Me.lblPass = New System.Windows.Forms.Label()
+        Me.lblDB = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtUsername
         '
-        Me.txtUsername.Location = New System.Drawing.Point(100, 50)
+        Me.txtUsername.Location = New System.Drawing.Point(40, 115)
         Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(200, 23)
-        Me.txtUsername.PlaceholderText = "Username"
+        Me.txtUsername.Size = New System.Drawing.Size(240, 23)
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(100, 90)
+        Me.txtPassword.Location = New System.Drawing.Point(40, 165)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPassword.Size = New System.Drawing.Size(200, 23)
-        Me.txtPassword.PlaceholderText = "Password"
+        Me.txtPassword.Size = New System.Drawing.Size(240, 23)
         '
         'btnLogin
         '
-        Me.btnLogin.Location = New System.Drawing.Point(100, 130)
+        Me.btnLogin.BackColor = System.Drawing.Color.FromArgb(0, 122, 204)
+        Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogin.ForeColor = System.Drawing.Color.White
+        Me.btnLogin.Location = New System.Drawing.Point(40, 205)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(200, 30)
-        Me.btnLogin.Text = "Login"
+        Me.btnLogin.Size = New System.Drawing.Size(240, 35)
+        Me.btnLogin.Text = "تسجيل الدخول"
+        Me.btnLogin.UseVisualStyleBackColor = False
         '
         'btnSelectDB
         '
-        Me.btnSelectDB.Location = New System.Drawing.Point(310, 170)
+        Me.btnSelectDB.Location = New System.Drawing.Point(40, 285)
         Me.btnSelectDB.Name = "btnSelectDB"
-        Me.btnSelectDB.Size = New System.Drawing.Size(75, 23)
-        Me.btnSelectDB.Text = "Browse..."
+        Me.btnSelectDB.Size = New System.Drawing.Size(240, 30)
+        Me.btnSelectDB.Text = "ربط قاعدة البيانات"
         '
         'txtDBPath
         '
-        Me.txtDBPath.Location = New System.Drawing.Point(100, 170)
+        Me.txtDBPath.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.txtDBPath.Location = New System.Drawing.Point(40, 260)
         Me.txtDBPath.Name = "txtDBPath"
-        Me.txtDBPath.Size = New System.Drawing.Size(200, 23)
-        Me.txtDBPath.PlaceholderText = "Database Path"
+        Me.txtDBPath.ReadOnly = True
+        Me.txtDBPath.Size = New System.Drawing.Size(240, 23)
         '
-        'lblStatus
+        'lblTitle
         '
-        Me.lblStatus.Location = New System.Drawing.Point(10, 210)
-        Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(380, 23)
-        Me.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Bold)
+        Me.lblTitle.ForeColor = System.Drawing.Color.FromArgb(0, 122, 204)
+        Me.lblTitle.Location = New System.Drawing.Point(0, 20)
+        Me.lblTitle.Name = "lblTitle"
+        Me.lblTitle.Size = New System.Drawing.Size(320, 40)
+        Me.lblTitle.Text = "نظام إدارة المعهد"
+        Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblUser
+        '
+        Me.lblUser.Location = New System.Drawing.Point(40, 95)
+        Me.lblUser.Name = "lblUser"
+        Me.lblUser.Size = New System.Drawing.Size(240, 20)
+        Me.lblUser.Text = "اسم المستخدم"
+        Me.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblPass
+        '
+        Me.lblPass.Location = New System.Drawing.Point(40, 145)
+        Me.lblPass.Name = "lblPass"
+        Me.lblPass.Size = New System.Drawing.Size(240, 20)
+        Me.lblPass.Text = "كلمة المرور"
+        Me.lblPass.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblDB
+        '
+        Me.lblDB.Location = New System.Drawing.Point(40, 242)
+        Me.lblDB.Name = "lblDB"
+        Me.lblDB.Size = New System.Drawing.Size(240, 18)
+        Me.lblDB.Text = "مسار قاعدة البيانات"
+        Me.lblDB.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.lblTitle)
+        Me.Panel1.Controls.Add(Me.lblUser)
+        Me.Panel1.Controls.Add(Me.txtUsername)
+        Me.Panel1.Controls.Add(Me.lblPass)
+        Me.Panel1.Controls.Add(Me.txtPassword)
+        Me.Panel1.Controls.Add(Me.btnLogin)
+        Me.Panel1.Controls.Add(Me.lblDB)
+        Me.Panel1.Controls.Add(Me.txtDBPath)
+        Me.Panel1.Controls.Add(Me.btnSelectDB)
+        Me.Panel1.Location = New System.Drawing.Point(12, 12)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(320, 330)
         '
         'FrmLogin
         '
-        Me.ClientSize = New System.Drawing.Size(400, 250)
-        Me.Controls.Add(Me.txtUsername)
-        Me.Controls.Add(Me.txtPassword)
-        Me.Controls.Add(Me.btnLogin)
-        Me.Controls.Add(Me.btnSelectDB)
-        Me.Controls.Add(Me.txtDBPath)
-        Me.Controls.Add(Me.lblStatus)
+        Me.BackColor = System.Drawing.Color.FromArgb(240, 240, 240)
+        Me.ClientSize = New System.Drawing.Size(344, 354)
+        Me.Controls.Add(Me.Panel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "FrmLogin"
-        Me.Text = "Institute System - Login"
-        Me.StartPosition = FormStartPosition.CenterScreen
+        Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.RightToLeftLayout = True
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "تسجيل الدخول"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
     End Sub
 
     Friend WithEvents txtUsername As System.Windows.Forms.TextBox
@@ -88,5 +140,9 @@ Partial Class FrmLogin
     Friend WithEvents btnLogin As System.Windows.Forms.Button
     Friend WithEvents btnSelectDB As System.Windows.Forms.Button
     Friend WithEvents txtDBPath As System.Windows.Forms.TextBox
-    Friend WithEvents lblStatus As System.Windows.Forms.Label
+    Friend WithEvents lblTitle As System.Windows.Forms.Label
+    Friend WithEvents lblUser As System.Windows.Forms.Label
+    Friend WithEvents lblPass As System.Windows.Forms.Label
+    Friend WithEvents lblDB As System.Windows.Forms.Label
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
 End Class

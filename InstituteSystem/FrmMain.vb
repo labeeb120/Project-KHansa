@@ -6,14 +6,21 @@ Public Class FrmMain
         InitializeComponent()
         CurrentUser = username
         CurrentRole = role
-        lblWelcome.Text = $"Welcome, {username} ({role})"
+        lblWelcome.Text = $"مرحباً بك، {username} ({TranslateRole(role)})"
 
-        ' Apply permissions if needed
+        ' Apply permissions
         If CurrentRole <> "Admin" Then
-            ' For example, hide reports for non-admins
+            ' If there were specific restricted buttons, we would disable them here
             ' btnReports.Enabled = False
         End If
     End Sub
+
+    Private Function TranslateRole(role As String) As String
+        Select Case role.ToLower()
+            Case "admin" : Return "مدير النظام"
+            Case Else : Return "مستخدم"
+        End Select
+    End Function
 
     Private Sub btnPayments_Click(sender As Object, e As EventArgs) Handles btnPayments.Click
         Dim f As New FrmPayments()
@@ -32,7 +39,6 @@ Public Class FrmMain
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         Me.Close()
-        ' In a real app, you might want to show the login form again
         Application.Restart()
     End Sub
 End Class

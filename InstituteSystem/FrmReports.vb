@@ -10,7 +10,7 @@ Public Class FrmReports
     End Sub
 
     Private Sub LoadReport(month As Integer, year As Integer)
-        ' Totals Calculation
+        ' Totals Calculation - Using basic Access SQL functions
         Dim revenueSql As String = "SELECT SUM(Amount) FROM Payments WHERE YEAR(PaymentDate) = " & year
         Dim expenseSql As String = "SELECT SUM(Amount) FROM Expenses WHERE YEAR(ExpenseDate) = " & year
 
@@ -22,23 +22,36 @@ Public Class FrmReports
         Dim dtRevenueTotal As DataTable = DatabaseManager.GetDataTable(revenueSql)
         Dim dtExpenseTotal As DataTable = DatabaseManager.GetDataTable(expenseSql)
 
-        Dim totalRevenue As Decimal = If(IsDBNull(dtRevenueTotal.Rows(0)(0)), 0, CDec(dtRevenueTotal.Rows(0)(0)))
-        Dim totalExpense As Decimal = If(IsDBNull(dtExpenseTotal.Rows(0)(0)), 0, CDec(dtExpenseTotal.Rows(0)(0)))
+        Dim totalRevenue As Decimal = 0
+        If dtRevenueTotal.Rows.Count > 0 AndAlso Not IsDBNull(dtRevenueTotal.Rows(0)(0)) Then
+            totalRevenue = CDec(dtRevenueTotal.Rows(0)(0))
+        End If
+
+        Dim totalExpense As Decimal = 0
+        If dtExpenseTotal.Rows.Count > 0 AndAlso Not IsDBNull(dtExpenseTotal.Rows(0)(0)) Then
+            totalExpense = CDec(dtExpenseTotal.Rows(0)(0))
+        End If
+
         Dim balance As Decimal = totalRevenue - totalExpense
 
-        lblSummary.Text = $"Total Revenue: {totalRevenue:C} | Total Expenses: {totalExpense:C} | Balance: {balance:C}"
+        lblSummary.Text = $"إجمالي الإيرادات: {totalRevenue:N2} | إجمالي المصروفات: {totalExpense:N2} | الصافي: {balance:N2}"
 
-        ' Populating DataGridView with a Unified View (Union of Payments and Expenses)
-        Dim listSql As String = "SELECT PaymentDate AS [Date], 'Revenue' AS Type, StudentName AS Description, Amount FROM Payments WHERE YEAR(PaymentDate) = " & year
+        ' Populating DataGridView with a Unified View
+        Dim listSql As String = "SELECT PaymentDate AS [التاريخ], 'إيراد' AS [النوع], StudentName AS [البيان], Amount AS [المبلغ] FROM Payments WHERE YEAR(PaymentDate) = " & year
         If month > 0 Then listSql &= " AND MONTH(PaymentDate) = " & month
 
         listSql &= " UNION ALL "
 
-        listSql &= "SELECT ExpenseDate AS [Date], 'Expense' AS Type, Description, -Amount FROM Expenses WHERE YEAR(ExpenseDate) = " & year
+        listSql &= "SELECT ExpenseDate AS [التاريخ], 'مصروف' AS [النوع], Description AS [البيان], -Amount AS [المبلغ] FROM Expenses WHERE YEAR(ExpenseDate) = " & year
         If month > 0 Then listSql &= " AND MONTH(ExpenseDate) = " & month
 
-        listSql &= " ORDER BY [Date] DESC"
+        listSql &= " ORDER BY [التاريخ] DESC"
 
         dgvReports.DataSource = DatabaseManager.GetDataTable(listSql)
+    End Sub
+
+    Private Sub FrmReports_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Load monthly report by default
+        btnMonthly.PerformClick()
     End Sub
 End Class

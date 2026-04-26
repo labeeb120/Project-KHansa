@@ -1,34 +1,26 @@
 # Institute Management System (VB.NET)
 
-This is a simple accounting system for an institute, built using VB.NET and MS Access.
+An accounting system for institutes to manage student fees and expenses.
 
 ## Features
-- Dynamic MS Access database connection.
-- Automatic database schema generation.
-- Student fee management.
-- Institute expense tracking.
-- Monthly and annual financial reports.
-- Role-based login system.
+- **Dynamic Database Connection:** Select or create MS Access database path at runtime.
+- **Auto-Schema Generation:** Tables are automatically created on first run.
+- **Arabic UI:** Fully localized interface for Arabic-speaking users.
+- **Secure Authentication:** Parameterized queries to prevent SQL injection.
+- **Financial Reporting:** Unified view of revenues and expenses with balance calculation.
 
 ## Requirements
-- .NET 8.0 SDK or later.
-- Windows OS (for running the UI).
-- Microsoft Access Database Engine (for OLEDB connection).
+- **Visual Studio 2022** with **.NET desktop development** workload.
+- **.NET 8.0 SDK**.
+- **Microsoft Access Database Engine** (Required for OLEDB).
 
-## Setup
-1. Clone the repository.
-2. Open `InstituteSystem.sln` using **Visual Studio 2022**.
-3. Ensure you have the **.NET desktop development** workload installed in Visual Studio.
-4. Press **F5** or click **Start** to run the application.
-4. On the login screen, select a path to an existing or new `.accdb` file.
-5. Log in with:
+## Getting Started
+1. Open `InstituteSystem.sln` in Visual Studio 2022.
+2. Run the project (F5).
+3. On the login screen, click **"Connect Database"** and select an `.accdb` file.
+4. Login with:
    - **Username:** `admin`
    - **Password:** `admin123`
 
-## Structure
-- `DatabaseManager.vb`: Handles all data operations and schema initialization.
-- `FrmLogin.vb`: Entry point for user authentication and DB path selection.
-- `FrmMain.vb`: Dashboard for navigation.
-- `FrmPayments.vb`: Interface for student fees.
-- `FrmExpenses.vb`: Interface for institute expenses.
-- `FrmReports.vb`: Financial reporting module.
+## Documentation
+See `MANUAL.md` for a detailed Arabic guide and technical explanation for graduation project discussions.

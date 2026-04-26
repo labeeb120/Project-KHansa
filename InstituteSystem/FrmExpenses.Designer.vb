@@ -29,47 +29,70 @@ Partial Class FrmExpenses
         '
         'Label1
         '
-        Me.Label1.Location = New System.Drawing.Point(20, 20)
-        Me.Label1.Text = "Description:"
+        Me.Label1.Location = New System.Drawing.Point(340, 20)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(100, 23)
+        Me.Label1.Text = "الوصف:"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'txtDescription
         '
-        Me.txtDescription.Location = New System.Drawing.Point(120, 20)
-        Me.txtDescription.Size = New System.Drawing.Size(200, 23)
+        Me.txtDescription.Location = New System.Drawing.Point(20, 20)
+        Me.txtDescription.Name = "txtDescription"
+        Me.txtDescription.Size = New System.Drawing.Size(314, 23)
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(20, 60)
-        Me.Label2.Text = "Amount:"
+        Me.Label2.Location = New System.Drawing.Point(340, 60)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(100, 23)
+        Me.Label2.Text = "المبلغ:"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'txtAmount
         '
-        Me.txtAmount.Location = New System.Drawing.Point(120, 60)
+        Me.txtAmount.Location = New System.Drawing.Point(234, 60)
+        Me.txtAmount.Name = "txtAmount"
         Me.txtAmount.Size = New System.Drawing.Size(100, 23)
         '
         'Label3
         '
-        Me.Label3.Location = New System.Drawing.Point(20, 100)
-        Me.Label3.Text = "Category:"
+        Me.Label3.Location = New System.Drawing.Point(340, 100)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(100, 23)
+        Me.Label3.Text = "الفئة:"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'txtCategory
         '
-        Me.txtCategory.Location = New System.Drawing.Point(120, 100)
+        Me.txtCategory.Location = New System.Drawing.Point(134, 100)
+        Me.txtCategory.Name = "txtCategory"
         Me.txtCategory.Size = New System.Drawing.Size(200, 23)
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(120, 140)
-        Me.btnSave.Size = New System.Drawing.Size(100, 30)
-        Me.btnSave.Text = "Save Expense"
+        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(233, 30, 99)
+        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSave.ForeColor = System.Drawing.Color.White
+        Me.btnSave.Location = New System.Drawing.Point(134, 140)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(200, 35)
+        Me.btnSave.Text = "حفظ المصروف"
+        Me.btnSave.UseVisualStyleBackColor = False
         '
         'dgvExpenses
         '
-        Me.dgvExpenses.Location = New System.Drawing.Point(20, 180)
-        Me.dgvExpenses.Size = New System.Drawing.Size(440, 200)
+        Me.dgvExpenses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvExpenses.BackgroundColor = System.Drawing.Color.White
+        Me.dgvExpenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvExpenses.Location = New System.Drawing.Point(20, 190)
+        Me.dgvExpenses.Name = "dgvExpenses"
+        Me.dgvExpenses.ReadOnly = True
+        Me.dgvExpenses.Size = New System.Drawing.Size(440, 190)
         '
         'FrmExpenses
         '
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(480, 400)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtDescription)
@@ -79,9 +102,13 @@ Partial Class FrmExpenses
         Me.Controls.Add(Me.txtCategory)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.dgvExpenses)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "FrmExpenses"
-        Me.Text = "Manage Institute Expenses"
-        Me.StartPosition = FormStartPosition.CenterParent
+        Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.RightToLeftLayout = True
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.Text = "إدارة مصروفات المعهد"
         CType(Me.dgvExpenses, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
